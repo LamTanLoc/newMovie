@@ -1,0 +1,99 @@
+<div class="KetQua">
+  <div class="ChonGhe__LifeCycle">
+    <ul>
+      <li><i class="fa fa-arrow-left display-4"></i></li>
+      <li><a class=" display-4 step active " href="#"><span>01 </span> CHỌN LOẠI VÉ</a></li>
+      <li><a class="display-4 step active" href="#"> <span>02 </span> CHỌN GHẾ & THANH TOÁN</a></li>
+      <li><a class=" display-4 step active" href="#"> <span>03 </span> KẾT QUẢ ĐẶT VÉ</a></li>
+    </ul>
+  </div>
+
+  <div class="container content__KetQua">
+    <div class="tag">
+      <p class="thank display-4">Cảm ơn bạn đã đặt vé phim tại Galaxy Cinerma</p>
+      <p class="no display-4"><span class="tag__no">Booking No : </span>
+        <span class="number display-4">05858{{MaLichChieu}}</span></p>
+
+      <img src="../../../../../assets/images/MaVach.gif" alt="" class="maVach mb-2">
+      <p class="name display-4">{{TenPhim}}</p>
+      <div class="hr"></div>
+    </div>
+    <div class="row ThongTinThanhToan">
+
+      <div class="col-md-2 col-md-12 anHien">
+      </div>
+      <div class="col-lg-5  col-md-12 thongTinVe">
+        <table>
+          <tr>
+            <th class="td__title td_titlePd">Thông tin vé</th>
+            <th></th>
+
+          </tr>
+          <tr>
+            <td class="td__title ">Mã vé : </td>
+            <td class="maVe"> #{{MaLichChieu}}</td>
+          </tr>
+
+          <tr>
+            <td class="td__title">Vị trí ghế : </td>
+            <td>
+              <span *ngFor="let item of DanhSachGheDaDat">
+                <span class="ViTriGhe">{{item.TenGhe}} </span>
+
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="td__title">Suất chiếu : </td>
+            <td>{{chiTietLichChieu.NgayChieuGioChieu| date: "hh:mm - EEEE-dd/mm/yyyy"}}</td>
+          </tr>
+
+          <tr>
+            <td class="td__title">Phòng chiếu : </td>
+            <td>{{chiTietLichChieu.Rap.TenRap}}</td>
+          </tr>
+
+          <tr>
+            <td class="td__title">Tài khoản : </td>
+            <td>{{TaiKhoan}}</td>
+          </tr>
+
+          <tr>
+            <td class="td__title">Email : </td>
+            <td class="email">{{Email}}@gmail.com</td>
+          </tr>
+        </table>
+
+      </div>
+      <div class="col-lg-5 col-md-12  thongTinThanhToan">
+
+        <table>
+          <tr>
+            <th class="td__title td_titlePd">Thông tin thanh toán</th>
+            <th></th>
+
+          </tr>
+          <tr>
+            <td class="td__title">Phương thức : </td>
+            <td>Trực tuyến</td>
+          </tr>
+
+          <tr>
+            <td class="td__title">Tổng tiền : </td>
+            <td>{{TongTien| currency:"VND":""}} VND</td>
+          </tr>
+
+          <tr>
+            <td class="td__title">Thời gian đặt vé : </td>
+            <td>{{date | date: "hh:mm - EEEE-dd/MM/yyyy"}}</td>
+          </tr>
+
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
